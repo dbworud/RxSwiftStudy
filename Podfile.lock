@@ -1,11 +1,32 @@
 PODS:
+  - Alamofire (5.4.0)
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - ModelMapper (10.0.1):
+    - ModelMapper/Core (= 10.0.1)
+  - ModelMapper/Core (10.0.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya-ModelMapper/Core (10.0.0):
+    - ModelMapper (~> 10.0)
+    - Moya (~> 14.0)
+  - Moya-ModelMapper/RxSwift (10.0.0):
+    - Moya-ModelMapper/Core
+    - Moya/RxSwift (~> 14.0)
+    - RxSwift
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
@@ -13,25 +34,37 @@ PODS:
 
 DEPENDENCIES:
   - ChameleonFramework
+  - Moya-ModelMapper/RxSwift
   - "NSObject+Rx"
   - RxCocoa
+  - RxOptional
   - RxSwift
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - ChameleonFramework
+    - ModelMapper
+    - Moya
+    - Moya-ModelMapper
     - "NSObject+Rx"
     - RxCocoa
+    - RxOptional
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  ModelMapper: 0f68dd4300d0e27290c70f66492c7f795da21bcf
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Moya-ModelMapper: e3a478500921e7299804dc1ac550f1ebf3228ade
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 8717edcbf2dd843035b490de724db9c1cca93f59
+PODFILE CHECKSUM: 75df03c776e2a4e905ca9fc07a510324a17f4888
 
 COCOAPODS: 1.10.0

@@ -15,6 +15,10 @@
 		4F8C3CDC2584A70A000E3A9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F8C3CDA2584A70A000E3A9D /* LaunchScreen.storyboard */; };
 		4F8C3CEB2584ADB7000E3A9D /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3CEA2584ADB7000E3A9D /* CircleViewController.swift */; };
 		4F8C3CF12584AEA9000E3A9D /* CircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3CF02584AEA9000E3A9D /* CircleViewModel.swift */; };
+		4F8C3CFD2584B8CC000E3A9D /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3CFC2584B8CC000E3A9D /* IssueListViewController.swift */; };
+		4F8C3D0C2584B960000E3A9D /* IssueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D0B2584B960000E3A9D /* IssueListViewModel.swift */; };
+		4F8C3D0F2584B96B000E3A9D /* IssueEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */; };
+		4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */; };
 		E81F59B5D2AA40A142A096BD /* Pods_RxSwiftStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D94373875B61F23637ADE7 /* Pods_RxSwiftStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		4F8C3CDD2584A70A000E3A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F8C3CEA2584ADB7000E3A9D /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		4F8C3CF02584AEA9000E3A9D /* CircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewModel.swift; sourceTree = "<group>"; };
+		4F8C3CFC2584B8CC000E3A9D /* IssueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListViewController.swift; sourceTree = "<group>"; };
+		4F8C3D0B2584B960000E3A9D /* IssueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListViewModel.swift; sourceTree = "<group>"; };
+		4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEntity.swift; sourceTree = "<group>"; };
+		4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryEntity.swift; sourceTree = "<group>"; };
 		6B6E7688F838D66F0133F387 /* Pods-RxSwiftStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftStudy.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftStudy/Pods-RxSwiftStudy.release.xcconfig"; sourceTree = "<group>"; };
 		B2D94373875B61F23637ADE7 /* Pods_RxSwiftStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90F89F1C2120532DDE22191 /* Pods-RxSwiftStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftStudy.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftStudy/Pods-RxSwiftStudy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 				4F8C3CEF2584AE69000E3A9D /* SupportingFiles */,
 				4F8C3CED2584AE47000E3A9D /* CitySearcher */,
 				4F8C3CEE2584AE4F000E3A9D /* ColorfullBall */,
+				4F8C3CFA2584B8A5000E3A9D /* IssueTracker */,
 				4F8C3CD52584A706000E3A9D /* Main.storyboard */,
 				4F8C3CD82584A70A000E3A9D /* Assets.xcassets */,
 				4F8C3CDA2584A70A000E3A9D /* LaunchScreen.storyboard */,
@@ -110,6 +119,17 @@
 				4F8C3CD12584A706000E3A9D /* SceneDelegate.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4F8C3CFA2584B8A5000E3A9D /* IssueTracker */ = {
+			isa = PBXGroup;
+			children = (
+				4F8C3CFC2584B8CC000E3A9D /* IssueListViewController.swift */,
+				4F8C3D0B2584B960000E3A9D /* IssueListViewModel.swift */,
+				4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */,
+				4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */,
+			);
+			path = IssueTracker;
 			sourceTree = "<group>";
 		};
 		9F8A62BFC313562CA317BF3D /* Pods */ = {
@@ -235,11 +255,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F8C3CFD2584B8CC000E3A9D /* IssueListViewController.swift in Sources */,
 				4F8C3CD42584A706000E3A9D /* ViewController.swift in Sources */,
+				4F8C3D0F2584B96B000E3A9D /* IssueEntity.swift in Sources */,
 				4F8C3CEB2584ADB7000E3A9D /* CircleViewController.swift in Sources */,
 				4F8C3CD02584A706000E3A9D /* AppDelegate.swift in Sources */,
 				4F8C3CD22584A706000E3A9D /* SceneDelegate.swift in Sources */,
+				4F8C3D0C2584B960000E3A9D /* IssueListViewModel.swift in Sources */,
 				4F8C3CF12584AEA9000E3A9D /* CircleViewModel.swift in Sources */,
+				4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
