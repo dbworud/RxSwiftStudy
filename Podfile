@@ -13,6 +13,8 @@ target 'RxSwiftStudy' do
 	pod 'Moya-ModelMapper/RxSwift'
 	pod 'RxOptional'
 
+	pod 'Moya/RxSwift'
+
   # Pods for RxSwiftStudy
 
 end
