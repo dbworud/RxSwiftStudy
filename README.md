@@ -35,6 +35,6 @@ Observable에 값을 추가하고 Subscribe까지 하는 것
 RxSwift는 일반적인 Rx API이고, RxCocoa는 RxSwift의 동반 라이브러리로서 UIKit와 Cocoa프레임워크 기반의 개발을 지원하는 클래스를 보유하고 있음
 Relay는 RxCocoa4에서 구현된 클래스
 - PublishRelay: PublishSubject의 Wrapper
-- BehaviorRelay: BehaviorSubject의 Wrapper, .value를 통해 현재값 가져올 수 있음 (~~Variable~~ -> BehaviorRelay)
-~ Subject는 .completed/.error 이벤트가 발생되어 subscribe종료  
-~ Relay는 .completed/.error 이벤트가 발생하지 않고 수동으로 dispose되기 전까지 계속 작동하 -> UI Event에 적합
+- BehaviorRelay: BehaviorSubject의 Wrapper, .value를 통해 현재값 가져올 수 있음 (~~Variable~~ -> BehaviorRelay)  
+~ Subject는 .completed/.error 이벤트가 발생되어 subscribe 종료  
+~ Relay는 .completed/.error 이벤트가 발생하지 않고 수동으로 dispose되기 전까지 계속 작동 -> UI Event에 적합
