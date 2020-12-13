@@ -16,7 +16,7 @@
 		4F8C3CEB2584ADB7000E3A9D /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3CEA2584ADB7000E3A9D /* CircleViewController.swift */; };
 		4F8C3CF12584AEA9000E3A9D /* CircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3CF02584AEA9000E3A9D /* CircleViewModel.swift */; };
 		4F8C3CFD2584B8CC000E3A9D /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3CFC2584B8CC000E3A9D /* IssueListViewController.swift */; };
-		4F8C3D0C2584B960000E3A9D /* IssueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D0B2584B960000E3A9D /* IssueListViewModel.swift */; };
+		4F8C3D0C2584B960000E3A9D /* IssueTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D0B2584B960000E3A9D /* IssueTrackerModel.swift */; };
 		4F8C3D0F2584B96B000E3A9D /* IssueEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */; };
 		4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */; };
 		4FCDB8762585B0E5006F2B83 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */; };
@@ -35,7 +35,7 @@
 		4F8C3CEA2584ADB7000E3A9D /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		4F8C3CF02584AEA9000E3A9D /* CircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewModel.swift; sourceTree = "<group>"; };
 		4F8C3CFC2584B8CC000E3A9D /* IssueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListViewController.swift; sourceTree = "<group>"; };
-		4F8C3D0B2584B960000E3A9D /* IssueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListViewModel.swift; sourceTree = "<group>"; };
+		4F8C3D0B2584B960000E3A9D /* IssueTrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTrackerModel.swift; sourceTree = "<group>"; };
 		4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEntity.swift; sourceTree = "<group>"; };
 		4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryEntity.swift; sourceTree = "<group>"; };
 		4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
@@ -89,6 +89,7 @@
 				4F8C3CED2584AE47000E3A9D /* CitySearcher */,
 				4F8C3CEE2584AE4F000E3A9D /* ColorfullBall */,
 				4F8C3CFA2584B8A5000E3A9D /* IssueTracker */,
+				4FCDB8A92585F137006F2B83 /* SearchByUser */,
 				4F8C3CD52584A706000E3A9D /* Main.storyboard */,
 				4F8C3CD82584A70A000E3A9D /* Assets.xcassets */,
 				4F8C3CDA2584A70A000E3A9D /* LaunchScreen.storyboard */,
@@ -127,12 +128,19 @@
 			isa = PBXGroup;
 			children = (
 				4F8C3CFC2584B8CC000E3A9D /* IssueListViewController.swift */,
-				4F8C3D0B2584B960000E3A9D /* IssueListViewModel.swift */,
+				4F8C3D0B2584B960000E3A9D /* IssueTrackerModel.swift */,
 				4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */,
 				4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */,
 				4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */,
 			);
 			path = IssueTracker;
+			sourceTree = "<group>";
+		};
+		4FCDB8A92585F137006F2B83 /* SearchByUser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchByUser;
 			sourceTree = "<group>";
 		};
 		9F8A62BFC313562CA317BF3D /* Pods */ = {
@@ -265,7 +273,7 @@
 				4F8C3CEB2584ADB7000E3A9D /* CircleViewController.swift in Sources */,
 				4F8C3CD02584A706000E3A9D /* AppDelegate.swift in Sources */,
 				4F8C3CD22584A706000E3A9D /* SceneDelegate.swift in Sources */,
-				4F8C3D0C2584B960000E3A9D /* IssueListViewModel.swift in Sources */,
+				4F8C3D0C2584B960000E3A9D /* IssueTrackerModel.swift in Sources */,
 				4F8C3CF12584AEA9000E3A9D /* CircleViewModel.swift in Sources */,
 				4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */,
 			);
