@@ -21,7 +21,7 @@ ObservableType과 Observable클래스에서 복잡한 논리를 구현하기 위
 ex. filter, map, ... , -> subscribe 때 비로소 구독하면서 값을 방출 
 
 ## 3. Schedulers
-RxSwift에느 여러 스케줄러가 정의되어 있으며, 더 나은 performance를 위해 동일한 subscribe 작업 안에 다른 스케줄러에서 스케줄링이 가능
+RxSwift에는 여러 스케줄러가 정의되어 있으며, 더 나은 performance를 위해 동일한 subscribe 작업 안에 다른 스케줄러에서 스케줄링이 가능
 
 ![image](https://user-images.githubusercontent.com/59492694/102000834-de29bf80-3d2e-11eb-9c39-427aa401629b.png)
 
@@ -36,5 +36,5 @@ RxSwift는 일반적인 Rx API이고, RxCocoa는 RxSwift의 동반 라이브러�
 Relay는 RxCocoa4에서 구현된 클래스
 - PublishRelay: PublishSubject의 Wrapper
 - BehaviorRelay: BehaviorSubject의 Wrapper, .value를 통해 현재값 가져올 수 있음 (~~Variable~~ -> BehaviorRelay)
-~ Subject는 .completed/.error이벤트가 발생되어 subscribe종료  
-~ Relay는 .completed/.error이벤트가 발생하지 않고 수동으로 dispose되기 전까지 계속 작동하 -> UI Event에 적합
+~ Subject는 .completed/.error 이벤트가 발생되어 subscribe종료  
+~ Relay는 .completed/.error 이벤트가 발생하지 않고 수동으로 dispose되기 전까지 계속 작동하 -> UI Event에 적합
