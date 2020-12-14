@@ -22,62 +22,65 @@ import RxOptional
 
 // 네트워킹의 핵심부분!
 struct IssueTrackerModel {
+
+    let provider : MoyaProvider<Github> // request할 provider 정의
+    let repositoryName : Observable<String>
+//    let userName : Observable<String>
     
-    // 1. 전달할 Provider 속성과 text를 위한 Observable
-    let provider = MoyaProvider<Github>()
-    let repositoryName: Observable<String>
     
-    // ViewController가 테이블뷰에 바인딩하는 데에 사용할 메소드
-    func trackIssue() -> Observable<[Issue]> {
-        // 아래에서 만든 findIssue, findRepository 메소드 둘을 연결하려면 flatMap(), flatMapLatest()가 있음
-        // flatMap(), flatMapLatest()의 역할은 하나의 sequence에서 다른 sequence를 만드는 것 + 새로운 텍스트가 들어오면 이전의 작업을 취소 = flatMapLatest()
-        // 문자열 Sequence -> Repository Sequence
-        // Repository Sequence -> Issue Sequence
-        // 체인 오퍼레이션 이용
-        
-        
-        return repositoryName
-            .observeOn(MainScheduler.instance) // 1. UI에 바인딩할 예정이므로 UI thread에서 작업
-            
-            
-            // Repository의 이름을 Repository Sequence로 바꾸고 제대로 mapping되지 않으면 nil 반환
-            .flatMapLatest { name -> Observable<Repository?> in // 문자열 Sequence -> Repository Sequence
-                //guard let name = name else { return Observable.just(nil) }
-                print("\(name)")
-//                return self.findRepository(name)
-            }
-            
-            // 매핑된 repository가 nil인지 확인하고 nil이 아니면 Issue 배열로 반환
-            .flatMapLatest{ repository -> Observable<[Issue]?> in // Repository Sequence -> Issue Sequence
-                guard let repository = repository else { return Observable.just(nil) }
-                print("Repo: \(repository.fullname)")
-//                return self.findIssue(repository)
-            }
-            
-            .replaceNilWith([])
-        
-    }
-    
-    // Find issue given repository
-    internal func findIssue(_ repository: Repository) -> Observable<[Issue]>? {
-        return provider.rx
-            .request(.issues(repositoryFullName: repository.fullName))
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .asObservable()
-            .debug()
-            //.mapOptional(to: [Issue].self)
-            .map{ try JSONDecoder().decode([Issue].self, from: $0.data)}
-            //.filterEmpty()
-    }
-    
-    internal func findRepository(_ name: String) -> Observable<Repository>? {
+    // 1. Object Mapping이 불가하면 nil, 가능하면 Repository 반환
+    func findRepo(_ name: String) -> Observable<Repository?> {
         return provider.rx
             .request(.repo(fullName: name))
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .asObservable()
+            .filterSuccessfulStatusAndRedirectCodes()
             .debug()
-            .map{ try JSONDecoder().decode(Repository.self, from: $0.data)}
-            
+            .map(Repository?.self)
+            .asObservable()
     }
-     
+    
+    // 2. Find issue given repository
+    func findIssue(_ repository: Repository) -> Observable<[Issue]?> {
+        return provider.rx
+            .request(.issues(repositoryFullName: repository.fullName))
+            .filterSuccessfulStatusAndRedirectCodes() // error 생기면 알려주고, 성공하면 넘어감
+            .debug()
+            .map([Issue]?.self)
+            .asObservable()
+    }
+    
+    // 3. 1과 2의 메소드를 연결하는 연산자, Sequence A -> Sequnce B로 만드는 체인 오퍼레이션
+    // ex. Sequence(문자열) -> Sequence(레포지토리) or Sequence(레포지토리) -> Sequence(이슈)
+    // flapMap(): 하나의 값을 받고 새로운 값이 들어와도 이전 작업을 계속 진행 및 완료
+    // flatMapLatest(): 새로운 값을 받으면 이전의 업무는 취소하고 새롭게 작업 시작
+    func trackIssue() -> Observable<[Issue]> {
+        return repositoryName // Sequence(문자열)인 Observable<String> 출발하여 맵핑 시작
+            .observeOn(MainScheduler.instance) // 모델의 목적이 테이블뷰에 바인되는 UI작업임을 확신
+            .flatMapLatest{ name -> Observable<Repository?> in // Sequence(문자열) -> Sequence(레포지토리) ing...
+                print("search repo named \(name)")
+                return self.findRepo(name)
+            }
+            .flatMapLatest{ repository -> Observable<[Issue]?> in
+                // repo가 nil인지 먼저 체크
+                guard let repository = repository else { return Observable.just(nil) }
+                print("Found \(repository.fullName)")
+                return self.findIssue(repository)
+            }
+            .replaceNilWith([])
+    }
+    
+    /*
+    
+    // userProfile -> repo
+    // Githubg case .userProfile
+    func findUser(_ name: String) -> Observable<Repository?> {
+        return provider.rx
+            .request(.repos(username: name))
+            .filterSuccessfulStatusAndRedirectCodes()
+            .debug()
+            .map(Repository?.self)
+            .asObservable()
+    }
+    
+    */
+    
 }

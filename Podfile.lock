@@ -17,15 +17,17 @@ PODS:
     - RxSwift
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - Moya/ReactiveSwift (14.0.0):
-    - Moya/Core
-    - ReactiveSwift (~> 6.0)
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
-  - ReactiveSwift (6.5.0)
+  - ObjectMapper (4.2.0)
+  - RxAlamofire (5.7.1):
+    - RxAlamofire/Core (= 5.7.1)
+  - RxAlamofire/Core (5.7.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 5.1)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -39,9 +41,10 @@ PODS:
 DEPENDENCIES:
   - ChameleonFramework
   - Moya-ModelMapper/RxSwift
-  - Moya/ReactiveSwift
   - Moya/RxSwift
   - "NSObject+Rx"
+  - ObjectMapper
+  - RxAlamofire
   - RxCocoa
   - RxOptional
   - RxSwift
@@ -54,7 +57,8 @@ SPEC REPOS:
     - Moya
     - Moya-ModelMapper
     - "NSObject+Rx"
-    - ReactiveSwift
+    - ObjectMapper
+    - RxAlamofire
     - RxCocoa
     - RxOptional
     - RxRelay
@@ -67,12 +71,13 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Moya-ModelMapper: e3a478500921e7299804dc1ac550f1ebf3228ade
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
-  ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  RxAlamofire: 8e144c62dcc01d68dcb366bfc542eb6dd46bab78
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 546a0d349d5604c20b77b58e8c57a017cffa509a
+PODFILE CHECKSUM: caa1bb00508dc20b1917955dc2725123dd0e26c3
 
 COCOAPODS: 1.10.0

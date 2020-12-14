@@ -15,6 +15,9 @@ target 'RxSwiftStudy' do
 
 	pod 'Moya/RxSwift'
 
+	pod 'RxAlamofire'
+	pod 'ObjectMapper'
+
   # Pods for RxSwiftStudy
 
 end

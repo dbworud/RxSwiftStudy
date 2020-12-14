@@ -42,9 +42,6 @@ private extension String {
 // 여기서는 7가지 필요 -> baseUrl, path, param, paramEncodigg, method, sampleData, task
 
 extension Github : TargetType {
-    var headers: [String : String]? {
-        return nil
-    }
     
     var baseURL: URL {
         return URL(string: "https://api.github.com")!
@@ -54,13 +51,15 @@ extension Github : TargetType {
     var path: String {
         switch self {
         case .userProfile(let name):
-            return "/users/\(name.URLEscapedString)/repos"
-        case .repos(let name):
             return "/users/\(name.URLEscapedString)"
+        case .repos(let name):
+            return "/users/\(name.URLEscapedString)/repos"
+        
+            
         case .repo(let name):
-            return "/repo/\(name)"
-        case.issues(let repoName):
-            return "/repo/\(repoName.URLEscapedString)/issues"
+            return "/repos/\(name)"
+        case .issues(let repositoryName):
+            return "/repos/\(repositoryName)/issues"
         }
     }
     
@@ -88,7 +87,7 @@ extension Github : TargetType {
         return .requestPlain
     }
     
-    var parameters: [String : Any]? {
+    var headers: [String : String]? {
         return nil
     }
     
