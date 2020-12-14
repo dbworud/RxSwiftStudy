@@ -55,11 +55,11 @@ extension Github : TargetType {
         case .repos(let name):
             return "/users/\(name.URLEscapedString)/repos"
         
-            
-        case .repo(let name):
-            return "/repos/\(name)"
-        case .issues(let repositoryName):
-            return "/repos/\(repositoryName)/issues"
+        // https://api.github.com/repos/{owner}/{repo}/issues로 api 변경된 것 같음
+        case .repo(let owner):
+            return "/repos/\(owner)"
+        case .issues(let repo):
+            return "/repos/\(repo)/issues"
         }
     }
     

@@ -25,13 +25,13 @@ struct IssueTrackerModel {
 
     let provider : MoyaProvider<Github> // request할 provider 정의
     let repositoryName : Observable<String>
-//    let userName : Observable<String>
+    //let userName : Observable<String>
     
     
     // 1. Object Mapping이 불가하면 nil, 가능하면 Repository 반환
-    func findRepo(_ name: String) -> Observable<Repository?> {
+    func findRepo(_ owner: String) -> Observable<Repository?> {
         return provider.rx
-            .request(.repo(fullName: name))
+            .request(.repo(fullName: owner))
             .filterSuccessfulStatusAndRedirectCodes()
             .debug()
             .map(Repository?.self)
@@ -67,8 +67,7 @@ struct IssueTrackerModel {
             }
             .replaceNilWith([])
     }
-    
-    /*
+     
     
     // userProfile -> repo
     // Githubg case .userProfile
@@ -81,6 +80,6 @@ struct IssueTrackerModel {
             .asObservable()
     }
     
-    */
+    
     
 }

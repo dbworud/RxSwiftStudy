@@ -42,6 +42,12 @@ class IssueListViewController: UIViewController {
         setUpRx()
     }
     
+    override func viewWillLayoutSubviews() {
+           super.viewWillLayoutSubviews()
+
+           tableView.layoutIfNeeded()
+        }
+    
     func setUpRx() {
         
         // 사용할 변수 정의
@@ -82,3 +88,4 @@ class IssueListViewController: UIViewController {
     }
     
 }
+

@@ -174,19 +174,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ptG-l3-Tzc" firstAttribute="trailing" secondItem="Sd6-Wj-ArO" secondAttribute="trailing" id="67G-kb-mwf"/>
-                            <constraint firstAttribute="bottom" secondItem="ptG-l3-Tzc" secondAttribute="bottom" id="Ae5-3J-HTA"/>
+                            <constraint firstItem="cap-1N-bNT" firstAttribute="top" secondItem="9Se-Ss-XfY" secondAttribute="topMargin" constant="-10" id="B6M-jV-6v7"/>
                             <constraint firstItem="cap-1N-bNT" firstAttribute="trailing" secondItem="Sd6-Wj-ArO" secondAttribute="trailing" id="JAT-Ll-wcf"/>
                             <constraint firstAttribute="bottom" secondItem="ptG-l3-Tzc" secondAttribute="bottom" id="JWy-iR-H30"/>
-                            <constraint firstItem="cap-1N-bNT" firstAttribute="top" secondItem="9Se-Ss-XfY" secondAttribute="top" constant="34" id="KqD-bg-jgF"/>
                             <constraint firstItem="cap-1N-bNT" firstAttribute="leading" secondItem="Sd6-Wj-ArO" secondAttribute="leading" id="NaY-C2-GX5"/>
                             <constraint firstItem="ptG-l3-Tzc" firstAttribute="top" secondItem="0Rc-WY-vkQ" secondAttribute="bottom" id="Qck-6c-cI7"/>
                             <constraint firstItem="0Rc-WY-vkQ" firstAttribute="leading" secondItem="Sd6-Wj-ArO" secondAttribute="leading" id="R1F-pk-XsU"/>
-                            <constraint firstAttribute="trailing" secondItem="ptG-l3-Tzc" secondAttribute="trailing" id="aKd-aD-fm7"/>
-                            <constraint firstItem="ptG-l3-Tzc" firstAttribute="top" secondItem="0Rc-WY-vkQ" secondAttribute="bottom" id="lVR-tw-uDw"/>
                             <constraint firstItem="0Rc-WY-vkQ" firstAttribute="top" secondItem="cap-1N-bNT" secondAttribute="bottom" id="o2d-qv-Jgs"/>
                             <constraint firstItem="ptG-l3-Tzc" firstAttribute="leading" secondItem="Sd6-Wj-ArO" secondAttribute="leading" id="rRl-On-mLA"/>
                             <constraint firstItem="0Rc-WY-vkQ" firstAttribute="trailing" secondItem="Sd6-Wj-ArO" secondAttribute="trailing" id="t6y-IB-xAa"/>
-                            <constraint firstItem="ptG-l3-Tzc" firstAttribute="leading" secondItem="Sd6-Wj-ArO" secondAttribute="leading" id="y5O-tR-THR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -196,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5me-rR-CX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733" y="-304"/>
+            <point key="canvasLocation" x="607" y="-423"/>
         </scene>
     </scenes>
     <resources>
