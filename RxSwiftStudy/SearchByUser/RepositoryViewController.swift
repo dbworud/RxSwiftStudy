@@ -62,6 +62,7 @@ class RepositoryViewController: UIViewController {
                     }
                 }
             })
+            .disposed(by: rx.disposeBag)
         
         
     }

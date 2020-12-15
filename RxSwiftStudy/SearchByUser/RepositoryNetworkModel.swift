@@ -34,6 +34,13 @@ struct RepositoryNetworkModel {
     // ViewController에 바인딩할 때 bindTo() -> drive()
     fileprivate func fetchRepositiry() -> Driver<[Repo]> {
         return repositoryName
+            .subscribeOn(MainScheduler.instance) // Main thread에 있음을 알려줌
+            // Network request가 진행되고 있음을 유저에게 알려주고 싶음
+            .do(onNext: { response in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true // deprecated
+            })
+            // UI thread가 압도당할 수 있기 때문에 request와 mapping전에 백그라운드 스레드로 변경하고 UI thread에 업데이트
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .flatMapLatest{ text in
                 return RxAlamofire
                     .json(.get, "https://api.github.com/users/\(text)/repos")
@@ -42,6 +49,8 @@ struct RepositoryNetworkModel {
                         return Observable.never()
                     }
             }
+            // 다시 백그라운드 스레드에서 맵핑
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .map { (json) -> [Repo] in
                 if let repos = Mapper<Repo>().mapArray(JSONObject: json) {
                     return repos
@@ -49,7 +58,11 @@ struct RepositoryNetworkModel {
                     return []
                 }
             }
-            .asDriver(onErrorJustReturn: []) // Main thread에 있음을 확신
+            .observeOn(MainScheduler.instance)
+            .do(onNext:{ response in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true // deprecated
+            })
+            .asDriver(onErrorJustReturn: []) // UI thread로 돌아옴
     }
     
     
