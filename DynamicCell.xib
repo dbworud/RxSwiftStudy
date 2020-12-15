@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="319" id="gtn-jh-lUs">
+            <rect key="frame" x="0.0" y="0.0" width="495" height="319"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gtn-jh-lUs" id="M54-wb-M2C">
+                <rect key="frame" x="0.0" y="0.0" width="495" height="319"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="judy" translatesAutoresizingMaskIntoConstraints="NO" id="rn8-yA-a4Q">
+                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="qgq-dk-Ke8"/>
+                            <constraint firstAttribute="height" constant="80" id="s8N-3O-6Sg"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Fxn-2n-TKI">
+                        <rect key="frame" x="96" y="8" width="69.5" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주토피아" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC8-WY-t6a">
+                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@주디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJs-Ri-Ar1">
+                                <rect key="frame" x="0.0" y="40" width="69.5" height="40"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXn-E0-AQW">
+                        <rect key="frame" x="8" y="96" width="478" height="170"/>
+                        <mutableString key="text">abelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabelabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VhE-vo-vtP">
+                        <rect key="frame" x="8" y="274" width="110" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkU-oO-dQS">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0uB-aN-x9A"/>
+                                    <constraint firstAttribute="width" constant="30" id="hNn-0T-a3h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G85-cL-3E3">
+                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="EU8-td-4rL"/>
+                                    <constraint firstAttribute="height" constant="30" id="JFq-Vc-THZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button" image="hand.thumbsup.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-8Z-ctE">
+                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="F5r-IQ-ZEu"/>
+                                    <constraint firstAttribute="height" constant="30" id="nKn-S4-35T"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="square.and.arrow.up" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DXn-E0-AQW" secondAttribute="trailing" constant="8" id="4ce-ey-5h5"/>
+                    <constraint firstItem="VhE-vo-vtP" firstAttribute="leading" secondItem="DXn-E0-AQW" secondAttribute="leading" id="5aY-Q6-p2w"/>
+                    <constraint firstItem="Fxn-2n-TKI" firstAttribute="height" secondItem="rn8-yA-a4Q" secondAttribute="height" id="7rd-Qa-8Hx"/>
+                    <constraint firstAttribute="bottom" secondItem="VhE-vo-vtP" secondAttribute="bottom" constant="15" id="EeU-hP-KgH"/>
+                    <constraint firstItem="rn8-yA-a4Q" firstAttribute="leading" secondItem="M54-wb-M2C" secondAttribute="leading" constant="8" id="J4V-Te-4LA"/>
+                    <constraint firstItem="rn8-yA-a4Q" firstAttribute="top" secondItem="M54-wb-M2C" secondAttribute="top" constant="8" id="Q5F-3i-YPM"/>
+                    <constraint firstItem="DXn-E0-AQW" firstAttribute="top" secondItem="rn8-yA-a4Q" secondAttribute="bottom" constant="8" id="WBA-vE-4gp"/>
+                    <constraint firstItem="Fxn-2n-TKI" firstAttribute="top" secondItem="M54-wb-M2C" secondAttribute="top" constant="8" id="gEF-R3-Uwp"/>
+                    <constraint firstItem="Fxn-2n-TKI" firstAttribute="top" secondItem="rn8-yA-a4Q" secondAttribute="top" id="ifA-Sw-xYF"/>
+                    <constraint firstItem="DXn-E0-AQW" firstAttribute="leading" secondItem="rn8-yA-a4Q" secondAttribute="leading" id="ipZ-6O-rGx"/>
+                    <constraint firstItem="Fxn-2n-TKI" firstAttribute="leading" secondItem="rn8-yA-a4Q" secondAttribute="trailing" constant="8" id="jbY-mw-i32"/>
+                    <constraint firstItem="VhE-vo-vtP" firstAttribute="top" secondItem="DXn-E0-AQW" secondAttribute="bottom" constant="8" id="tX4-qV-Uq1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-154.34782608695653" y="-124.88839285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="judy" width="219" height="219"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
