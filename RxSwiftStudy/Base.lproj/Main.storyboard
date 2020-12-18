@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qN3-mc-em9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2rz-Sh-Oxa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -300,6 +300,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pT9-5C-Hk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1949.2753623188407" y="5.3571428571428568"/>
+        </scene>
+        <!--Stream View Controller-->
+        <scene sceneID="RH4-Hd-dLy">
+            <objects>
+                <viewController id="2rz-Sh-Oxa" customClass="StreamViewController" customModule="RxSwiftStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o2a-14-uTR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDj-64-Z5Y">
+                                <rect key="frame" x="107" y="464" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GNI-eD-g37"/>
+                                    <constraint firstAttribute="width" constant="200" id="uYR-E6-DsB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Fire">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFire:" destination="2rz-Sh-Oxa" eventType="touchUpInside" id="zEU-cR-KNq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Via-VA-qgH" customClass="StremViewCont">
+                                <rect key="frame" x="207" y="394" width="0.0" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C5r-5n-Pld"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Via-VA-qgH" firstAttribute="top" secondItem="C5r-5n-Pld" secondAttribute="top" constant="350" id="F8a-f4-rYD"/>
+                            <constraint firstItem="EDj-64-Z5Y" firstAttribute="top" secondItem="C5r-5n-Pld" secondAttribute="top" constant="420" id="HAa-H4-pXx"/>
+                            <constraint firstItem="EDj-64-Z5Y" firstAttribute="centerX" secondItem="o2a-14-uTR" secondAttribute="centerX" id="Ihe-vX-rOT"/>
+                            <constraint firstItem="Via-VA-qgH" firstAttribute="centerX" secondItem="o2a-14-uTR" secondAttribute="centerX" id="MU8-lM-rgh"/>
+                            <constraint firstItem="EDj-64-Z5Y" firstAttribute="top" secondItem="Via-VA-qgH" secondAttribute="bottom" constant="40" id="Ojn-Ea-Ryy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textLabel" destination="Via-VA-qgH" id="0QK-V3-U7E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qH-Ki-JbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842.0289855072465" y="59.598214285714285"/>
         </scene>
         <!--Issue List View Controller-->
         <scene sceneID="mfD-JE-aMK">
