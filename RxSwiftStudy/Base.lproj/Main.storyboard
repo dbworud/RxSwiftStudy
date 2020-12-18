@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cp8-t0-9cg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qN3-mc-em9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -202,6 +202,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ik3-D3-1Sy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="738.61607142857144"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="pb9-9P-dYr">
+            <objects>
+                <viewController id="qN3-mc-em9" customClass="ShareViewController" customModule="RxSwiftStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1tM-27-cPM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iV0-da-2HH">
+                                <rect key="frame" x="8" y="414" width="398" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ETu-Td-mDS"/>
+                                    <constraint firstAttribute="height" constant="50" id="UJa-eb-TvA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Fire">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFire:" destination="qN3-mc-em9" eventType="touchUpInside" id="bEW-Io-H7N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dA7-ip-pBS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iV0-da-2HH" firstAttribute="leading" secondItem="dA7-ip-pBS" secondAttribute="leading" constant="8" id="HM4-Om-aO8"/>
+                            <constraint firstItem="dA7-ip-pBS" firstAttribute="trailing" secondItem="iV0-da-2HH" secondAttribute="trailing" constant="8" id="HOc-aW-9Qz"/>
+                            <constraint firstItem="iV0-da-2HH" firstAttribute="centerX" secondItem="1tM-27-cPM" secondAttribute="centerX" id="YUk-gm-FdM"/>
+                            <constraint firstItem="iV0-da-2HH" firstAttribute="top" secondItem="dA7-ip-pBS" secondAttribute="top" constant="370" id="xGe-uj-2jl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-IV-cP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2906" y="743"/>
         </scene>
         <!--Thread Transition View Controller-->
         <scene sceneID="vHJ-Qe-qiL">
