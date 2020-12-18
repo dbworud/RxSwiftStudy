@@ -20,6 +20,7 @@
 		4F8C3D0F2584B96B000E3A9D /* IssueEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */; };
 		4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */; };
 		4FAAC83F258C8A220047D2A0 /* ThreadTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC83E258C8A220047D2A0 /* ThreadTransition.swift */; };
+		4FAAC862258C97E30047D2A0 /* SubjectOfCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC861258C97E30047D2A0 /* SubjectOfCombine.swift */; };
 		4FCDB8762585B0E5006F2B83 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */; };
 		4FCDB8BA2585F659006F2B83 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8B92585F659006F2B83 /* RepositoryViewController.swift */; };
 		4FCDB8BD2585F665006F2B83 /* RepositoryNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8BC2585F665006F2B83 /* RepositoryNetworkModel.swift */; };
@@ -43,6 +44,7 @@
 		4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEntity.swift; sourceTree = "<group>"; };
 		4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryEntity.swift; sourceTree = "<group>"; };
 		4FAAC83E258C8A220047D2A0 /* ThreadTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTransition.swift; sourceTree = "<group>"; };
+		4FAAC861258C97E30047D2A0 /* SubjectOfCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectOfCombine.swift; sourceTree = "<group>"; };
 		4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
 		4FCDB8B92585F659006F2B83 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		4FCDB8BC2585F665006F2B83 /* RepositoryNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryNetworkModel.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				4FAAC83E258C8A220047D2A0 /* ThreadTransition.swift */,
+				4FAAC861258C97E30047D2A0 /* SubjectOfCombine.swift */,
 			);
 			path = "RxSwift VS Combine";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				4F8C3D0C2584B960000E3A9D /* IssueTrackerModel.swift in Sources */,
 				4F8C3CF12584AEA9000E3A9D /* CircleViewModel.swift in Sources */,
 				4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */,
+				4FAAC862258C97E30047D2A0 /* SubjectOfCombine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

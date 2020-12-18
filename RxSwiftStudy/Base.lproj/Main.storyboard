@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="72o-BK-hqx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cp8-t0-9cg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -137,6 +137,72 @@
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="581.91964285714278"/>
         </scene>
+        <!--Subject View Controller-->
+        <scene sceneID="bHY-mh-WRA">
+            <objects>
+                <viewController id="Cp8-t0-9cg" customClass="SubjectViewController" customModule="RxSwiftStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PKO-Yi-60L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5y-mz-7wF">
+                                <rect key="frame" x="107" y="464" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="WU2-Bm-Zxl"/>
+                                    <constraint firstAttribute="height" constant="50" id="iKl-V1-0XA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="ADD ITEM">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddItem:" destination="Cp8-t0-9cg" eventType="touchUpInside" id="A53-mR-oCS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HK1-Pw-FnN">
+                                <rect key="frame" x="107" y="534" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9yW-Z6-NqG"/>
+                                    <constraint firstAttribute="width" constant="200" id="Dar-tR-ceA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="INCREASE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onIncrease:" destination="Cp8-t0-9cg" eventType="touchUpInside" id="WFy-uA-aQY"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vdx-o2-uks">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="444"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xbt-cS-uK7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X5y-mz-7wF" firstAttribute="leading" secondItem="xbt-cS-uK7" secondAttribute="leading" constant="107" id="4yI-Ed-FZ9"/>
+                            <constraint firstItem="X5y-mz-7wF" firstAttribute="top" secondItem="Vdx-o2-uks" secondAttribute="bottom" constant="20" id="5QX-o8-01p"/>
+                            <constraint firstItem="Vdx-o2-uks" firstAttribute="trailing" secondItem="xbt-cS-uK7" secondAttribute="trailing" id="Can-Fn-Fok"/>
+                            <constraint firstItem="xbt-cS-uK7" firstAttribute="bottom" secondItem="HK1-Pw-FnN" secondAttribute="bottom" constant="278" id="OiQ-Mp-qTG"/>
+                            <constraint firstItem="xbt-cS-uK7" firstAttribute="trailing" secondItem="HK1-Pw-FnN" secondAttribute="trailing" constant="107" id="Pb1-IP-ibE"/>
+                            <constraint firstItem="Vdx-o2-uks" firstAttribute="leading" secondItem="xbt-cS-uK7" secondAttribute="leading" id="RIL-4q-LLn"/>
+                            <constraint firstItem="Vdx-o2-uks" firstAttribute="top" secondItem="PKO-Yi-60L" secondAttribute="top" id="Sht-R3-5E3"/>
+                            <constraint firstItem="Vdx-o2-uks" firstAttribute="centerX" secondItem="PKO-Yi-60L" secondAttribute="centerX" id="VPE-2W-uU0"/>
+                            <constraint firstItem="xbt-cS-uK7" firstAttribute="trailing" secondItem="X5y-mz-7wF" secondAttribute="trailing" constant="107" id="alQ-Vx-UBT"/>
+                            <constraint firstItem="HK1-Pw-FnN" firstAttribute="leading" secondItem="xbt-cS-uK7" secondAttribute="leading" constant="107" id="pyx-2a-oF8"/>
+                            <constraint firstItem="HK1-Pw-FnN" firstAttribute="top" secondItem="X5y-mz-7wF" secondAttribute="bottom" constant="20" id="vdH-0Q-Y6d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="Vdx-o2-uks" id="WUq-sf-Eij"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ik3-D3-1Sy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863.7681159420292" y="738.61607142857144"/>
+        </scene>
         <!--Thread Transition View Controller-->
         <scene sceneID="vHJ-Qe-qiL">
             <objects>
@@ -256,6 +322,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
