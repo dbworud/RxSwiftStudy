@@ -18,6 +18,9 @@ target 'RxSwiftStudy' do
 	pod 'RxAlamofire'
 	pod 'ObjectMapper'
 
+	pod 'Then'
+	pod 'CancelBag'
+
   # Pods for RxSwiftStudy
 
 end

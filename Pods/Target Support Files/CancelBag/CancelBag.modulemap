@@ -1,0 +1,6 @@
+framework module CancelBag {
+  umbrella header "CancelBag-umbrella.h"
+
+  export *
+  module * { export * }
+}

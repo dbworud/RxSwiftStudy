@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-RxSwiftStudy/Pods-RxSwiftStudy-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/CancelBag/CancelBag.framework
 ${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework
 ${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
@@ -11,3 +12,4 @@ ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/Then/Then.framework
