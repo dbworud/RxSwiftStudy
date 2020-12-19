@@ -20,6 +20,7 @@
 		4F8C3D0F2584B96B000E3A9D /* IssueEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */; };
 		4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */; };
 		4FA4B3B7258D9A4100E5CBA4 /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4B3B6258D9A4100E5CBA4 /* DataBinding.swift */; };
+		4FA4B3BA258DA0D500E5CBA4 /* MemoryManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4B3B9258DA0D500E5CBA4 /* MemoryManage.swift */; };
 		4FAAC83F258C8A220047D2A0 /* ThreadTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC83E258C8A220047D2A0 /* ThreadTransition.swift */; };
 		4FAAC862258C97E30047D2A0 /* SubjectOfCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC861258C97E30047D2A0 /* SubjectOfCombine.swift */; };
 		4FAAC865258CA3FC0047D2A0 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC864258CA3FC0047D2A0 /* Share.swift */; };
@@ -48,6 +49,7 @@
 		4F8C3D0E2584B96B000E3A9D /* IssueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEntity.swift; sourceTree = "<group>"; };
 		4F8C3D112584B977000E3A9D /* RepositoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryEntity.swift; sourceTree = "<group>"; };
 		4FA4B3B6258D9A4100E5CBA4 /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
+		4FA4B3B9258DA0D500E5CBA4 /* MemoryManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryManage.swift; sourceTree = "<group>"; };
 		4FAAC83E258C8A220047D2A0 /* ThreadTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTransition.swift; sourceTree = "<group>"; };
 		4FAAC861258C97E30047D2A0 /* SubjectOfCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectOfCombine.swift; sourceTree = "<group>"; };
 		4FAAC864258CA3FC0047D2A0 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				4FAAC867258CAAF40047D2A0 /* StreamWithPublisher.swift */,
 				4FAAC86A258CB1C30047D2A0 /* AsyncWrapping.swift */,
 				4FA4B3B6258D9A4100E5CBA4 /* DataBinding.swift */,
+				4FA4B3B9258DA0D500E5CBA4 /* MemoryManage.swift */,
 			);
 			path = "RxSwift VS Combine";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				4FAAC868258CAAF40047D2A0 /* StreamWithPublisher.swift in Sources */,
 				4F8C3CEB2584ADB7000E3A9D /* CircleViewController.swift in Sources */,
 				4FCDB8BD2585F665006F2B83 /* RepositoryNetworkModel.swift in Sources */,
+				4FA4B3BA258DA0D500E5CBA4 /* MemoryManage.swift in Sources */,
 				4FAAC865258CA3FC0047D2A0 /* Share.swift in Sources */,
 				4F8C3CD02584A706000E3A9D /* AppDelegate.swift in Sources */,
 				4FAAC86B258CB1C30047D2A0 /* AsyncWrapping.swift in Sources */,
