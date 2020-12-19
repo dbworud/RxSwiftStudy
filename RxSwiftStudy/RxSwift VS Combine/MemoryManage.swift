@@ -42,6 +42,7 @@ class PopupViewController : UIViewController {
         }
         */
         
+        // RxSwift
         /*
         Observable<Int>.interval(.milliseconds(100), scheduler: ConcurrentMainScheduler.instance)
             .map { _ in Date().timeIntervalSince1970 * 1000}
@@ -51,6 +52,7 @@ class PopupViewController : UIViewController {
             .disposed(by: disposeBag)
         */
         
+        // Combine
         let c = Timer.publish(every: 0.1, on: .main, in: .default)
             .autoconnect()
             .map { _ in Date().timeIntervalSince1970 * 1000}
