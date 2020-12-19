@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2rz-Sh-Oxa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NIi-NJ-AVF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -240,6 +240,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-IV-cP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2906" y="743"/>
+        </scene>
+        <!--Async Wrapping View Controller-->
+        <scene sceneID="J4M-ME-BVk">
+            <objects>
+                <viewController id="NIi-NJ-AVF" customClass="AsyncWrappingViewController" customModule="RxSwiftStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aJM-Nj-cL4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8O-jm-U4R">
+                                <rect key="frame" x="107" y="444" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cmt-JI-9L3"/>
+                                    <constraint firstAttribute="height" constant="50" id="yrI-bo-EZx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Fire">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFire:" destination="NIi-NJ-AVF" eventType="touchUpInside" id="VqV-lt-fff"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vGp-Vk-gIr">
+                                <rect key="frame" x="197" y="388" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXw-uT-nr5">
+                                <rect key="frame" x="207" y="388" width="0.0" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rbe-Ji-xFO"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="yXw-uT-nr5" firstAttribute="centerX" secondItem="aJM-Nj-cL4" secondAttribute="centerX" id="QBa-2v-WK1"/>
+                            <constraint firstItem="j8O-jm-U4R" firstAttribute="top" secondItem="yXw-uT-nr5" secondAttribute="bottom" constant="35" id="aFX-Ll-lPF"/>
+                            <constraint firstItem="j8O-jm-U4R" firstAttribute="top" secondItem="Rbe-Ji-xFO" secondAttribute="top" constant="400" id="g5f-Jn-KgM"/>
+                            <constraint firstItem="j8O-jm-U4R" firstAttribute="centerX" secondItem="aJM-Nj-cL4" secondAttribute="centerX" id="mrz-Lo-OTL"/>
+                            <constraint firstItem="yXw-uT-nr5" firstAttribute="top" secondItem="Rbe-Ji-xFO" secondAttribute="top" constant="344" id="wJS-JP-9gV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activity" destination="vGp-Vk-gIr" id="4pv-vP-0eH"/>
+                        <outlet property="textLabel" destination="yXw-uT-nr5" id="CCq-yb-MtS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KnR-IE-LuZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3818" y="434"/>
         </scene>
         <!--Thread Transition View Controller-->
         <scene sceneID="vHJ-Qe-qiL">
