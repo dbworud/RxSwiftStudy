@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NIi-NJ-AVF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fGk-VS-wbY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -240,6 +240,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-IV-cP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2906" y="743"/>
+        </scene>
+        <!--Data Binding View Controller-->
+        <scene sceneID="0Db-Fk-Pbz">
+            <objects>
+                <viewController id="fGk-VS-wbY" customClass="DataBindingViewController" customModule="RxSwiftStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l5m-N2-5DI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kmE-ug-b6E">
+                                <rect key="frame" x="10" y="492" width="394" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxI-wg-Ekn">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Minus">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onMinus:" destination="fGk-VS-wbY" eventType="touchUpInside" id="Aqk-qs-Rmk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-4b-DID">
+                                        <rect key="frame" x="202" y="0.0" width="192" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Plus">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPlus:" destination="fGk-VS-wbY" eventType="touchUpInside" id="lF8-vJ-abg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="3bZ-me-uyj"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADy-gL-cnh">
+                                <rect key="frame" x="207" y="406" width="0.0" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3Ya-0a-xBz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cj7-0Z-kmC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cj7-0Z-kmC" firstAttribute="trailing" secondItem="kmE-ug-b6E" secondAttribute="trailing" constant="10" id="7lW-6i-ty2"/>
+                            <constraint firstItem="kmE-ug-b6E" firstAttribute="centerX" secondItem="l5m-N2-5DI" secondAttribute="centerX" id="8cs-6R-S2G"/>
+                            <constraint firstItem="Cj7-0Z-kmC" firstAttribute="bottom" secondItem="kmE-ug-b6E" secondAttribute="bottom" constant="300" id="D7S-Qm-cDs"/>
+                            <constraint firstItem="ADy-gL-cnh" firstAttribute="centerX" secondItem="l5m-N2-5DI" secondAttribute="centerX" id="PIz-vh-JbA"/>
+                            <constraint firstItem="ADy-gL-cnh" firstAttribute="top" secondItem="Cj7-0Z-kmC" secondAttribute="top" constant="362" id="QTa-bt-jjQ"/>
+                            <constraint firstItem="kmE-ug-b6E" firstAttribute="leading" secondItem="Cj7-0Z-kmC" secondAttribute="leading" constant="10" id="wnY-8C-Ere"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="ADy-gL-cnh" id="r5v-4h-rD0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20X-hA-s9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3823" y="1160"/>
         </scene>
         <!--Async Wrapping View Controller-->
         <scene sceneID="J4M-ME-BVk">

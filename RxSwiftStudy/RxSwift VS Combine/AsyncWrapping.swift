@@ -20,6 +20,7 @@ class AsyncWrappingViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    
     func delayJob(_ job: @escaping (String) -> Void) {
         self.activity.isHidden = false
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
@@ -41,6 +42,7 @@ class AsyncWrappingViewController: UIViewController {
         }
     }
     
+    
     // Combine
     func comebineDelayJob() -> AnyPublisher<String?, Never>{
         return Future<String?, Never> { promise in
@@ -55,9 +57,31 @@ class AsyncWrappingViewController: UIViewController {
     
     @IBAction func onFire(_ sender: Any) {
 //        delayJob { self.textLabel.text = $0 }
+        
+        // RxSwift
 //        rxDelayJob().bind(to: textLabel.rx.text)
 //            .disposed(by: disposeBag)
-        cancellable = comebineDelayJob().assign(to: \.text, on: textLabel)
+        
+        // Combine
+//        cancellable = comebineDelayJob().assign(to: \.text, on: textLabel)
+        
+        // 기존의 비동기함수를 Observable로 표현
+        /*
+        Observable.just("Hi!")
+            .do(onNext: { _ in self.activity.isHidden = false })
+            .delay(.seconds(1), scheduler: MainScheduler.instance)
+            .do(onNext: { _ in self.activity.isHidden = true })
+            .bind(to: textLabel.rx.text)
+            .disposed(by: disposeBag)
+         */
+        
+        // 기존의 비동기함수를 Publisher로 표현
+        cancellable = Just("Hi!")
+            .handleEvents(receiveOutput: { _ in  self.activity.isHidden = false })
+            .delay(for: 1, scheduler: RunLoop.main)
+            .handleEvents(receiveOutput: { _ in  self.activity.isHidden = true })
+            .assign(to: \.text, on: textLabel)
+            
         
     }
 }
