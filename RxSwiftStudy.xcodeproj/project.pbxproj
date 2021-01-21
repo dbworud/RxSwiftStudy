@@ -30,6 +30,11 @@
 		4FAAC865258CA3FC0047D2A0 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC864258CA3FC0047D2A0 /* Share.swift */; };
 		4FAAC868258CAAF40047D2A0 /* StreamWithPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC867258CAAF40047D2A0 /* StreamWithPublisher.swift */; };
 		4FAAC86B258CB1C30047D2A0 /* AsyncWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAC86A258CB1C30047D2A0 /* AsyncWrapping.swift */; };
+		4FCBE9FC25B93D810071FF25 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBE9FB25B93D810071FF25 /* Article.swift */; };
+		4FCBEA1125B93ED20071FF25 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA1025B93ED20071FF25 /* ArticleService.swift */; };
+		4FCBEA1425B943730071FF25 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA1325B943730071FF25 /* ArticleViewModel.swift */; };
+		4FCBEA1B25B944FB0071FF25 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA1A25B944FB0071FF25 /* ArticleViewController.swift */; };
+		4FCBEA1E25B9463A0071FF25 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA1D25B9463A0071FF25 /* Coordinator.swift */; };
 		4FCDB8762585B0E5006F2B83 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */; };
 		4FCDB8BA2585F659006F2B83 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8B92585F659006F2B83 /* RepositoryViewController.swift */; };
 		4FCDB8BD2585F665006F2B83 /* RepositoryNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8BC2585F665006F2B83 /* RepositoryNetworkModel.swift */; };
@@ -63,6 +68,11 @@
 		4FAAC864258CA3FC0047D2A0 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		4FAAC867258CAAF40047D2A0 /* StreamWithPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamWithPublisher.swift; sourceTree = "<group>"; };
 		4FAAC86A258CB1C30047D2A0 /* AsyncWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncWrapping.swift; sourceTree = "<group>"; };
+		4FCBE9FB25B93D810071FF25 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		4FCBEA1025B93ED20071FF25 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
+		4FCBEA1325B943730071FF25 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		4FCBEA1A25B944FB0071FF25 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		4FCBEA1D25B9463A0071FF25 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
 		4FCDB8B92585F659006F2B83 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		4FCDB8BC2585F665006F2B83 /* RepositoryNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryNetworkModel.swift; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 		4F8C3CCE2584A706000E3A9D /* RxSwiftStudy */ = {
 			isa = PBXGroup;
 			children = (
+				4FCBE9FA25B93C4B0071FF25 /* NewsSearch */,
 				4FAAC83D258C89860047D2A0 /* RxSwift VS Combine */,
 				4F8C3CEF2584AE69000E3A9D /* SupportingFiles */,
 				4F8C3CED2584AE47000E3A9D /* CitySearcher */,
@@ -181,6 +192,18 @@
 				4FA4B3C5258DD82900E5CBA4 /* DownloadImage.swift */,
 			);
 			path = "RxSwift VS Combine";
+			sourceTree = "<group>";
+		};
+		4FCBE9FA25B93C4B0071FF25 /* NewsSearch */ = {
+			isa = PBXGroup;
+			children = (
+				4FCBE9FB25B93D810071FF25 /* Article.swift */,
+				4FCBEA1025B93ED20071FF25 /* ArticleService.swift */,
+				4FCBEA1325B943730071FF25 /* ArticleViewModel.swift */,
+				4FCBEA1A25B944FB0071FF25 /* ArticleViewController.swift */,
+				4FCBEA1D25B9463A0071FF25 /* Coordinator.swift */,
+			);
+			path = NewsSearch;
 			sourceTree = "<group>";
 		};
 		4FCDB8A92585F137006F2B83 /* SearchByUser */ = {
@@ -325,6 +348,7 @@
 				4FCDB8C02585F66D006F2B83 /* Repository.swift in Sources */,
 				4FA4B3BD258DB36B00E5CBA4 /* MultipleStream.swift in Sources */,
 				4F8C3D0F2584B96B000E3A9D /* IssueEntity.swift in Sources */,
+				4FCBEA1B25B944FB0071FF25 /* ArticleViewController.swift in Sources */,
 				4FCDB8762585B0E5006F2B83 /* GithubEndpoint.swift in Sources */,
 				4FAAC83F258C8A220047D2A0 /* ThreadTransition.swift in Sources */,
 				4FAAC868258CAAF40047D2A0 /* StreamWithPublisher.swift in Sources */,
@@ -332,12 +356,16 @@
 				4F8C3CEB2584ADB7000E3A9D /* CircleViewController.swift in Sources */,
 				4FCDB8BD2585F665006F2B83 /* RepositoryNetworkModel.swift in Sources */,
 				4FA4B3BA258DA0D500E5CBA4 /* MemoryManage.swift in Sources */,
+				4FCBEA1125B93ED20071FF25 /* ArticleService.swift in Sources */,
+				4FCBEA1E25B9463A0071FF25 /* Coordinator.swift in Sources */,
 				4FAAC865258CA3FC0047D2A0 /* Share.swift in Sources */,
 				4F8C3CD02584A706000E3A9D /* AppDelegate.swift in Sources */,
 				4FAAC86B258CB1C30047D2A0 /* AsyncWrapping.swift in Sources */,
+				4FCBE9FC25B93D810071FF25 /* Article.swift in Sources */,
 				4F8C3CD22584A706000E3A9D /* SceneDelegate.swift in Sources */,
 				4F8C3D0C2584B960000E3A9D /* IssueTrackerModel.swift in Sources */,
 				4F8C3CF12584AEA9000E3A9D /* CircleViewModel.swift in Sources */,
+				4FCBEA1425B943730071FF25 /* ArticleViewModel.swift in Sources */,
 				4F8C3D122584B977000E3A9D /* RepositoryEntity.swift in Sources */,
 				4FAAC862258C97E30047D2A0 /* SubjectOfCombine.swift in Sources */,
 			);

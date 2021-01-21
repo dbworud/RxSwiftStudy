@@ -21,6 +21,8 @@ target 'RxSwiftStudy' do
 	pod 'Then'
 	pod 'CancelBag'
 
+	pod 'SDWebImage', '~> 5.0'
+
   # Pods for RxSwiftStudy
 
 end
