@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 final class ArticleViewModel {
     
@@ -18,7 +19,9 @@ final class ArticleViewModel {
         self.articleService = articleService
     }
     
-    func fetchArticles() -> Observable<[Article]> {
-        return articleService.fetchNews()
+    func fetchArticles() -> Observable<[CellViewModel]> {
+        articleService.fetchNews().map{ $0.map { CellViewModel(article: $0) }}
+        // [Article] 배열에서 하나씩 뽑아오기
     }
+    
 }

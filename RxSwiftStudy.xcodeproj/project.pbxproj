@@ -35,6 +35,8 @@
 		4FCBEA1425B943730071FF25 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA1325B943730071FF25 /* ArticleViewModel.swift */; };
 		4FCBEA1B25B944FB0071FF25 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA1A25B944FB0071FF25 /* ArticleViewController.swift */; };
 		4FCBEA1E25B9463A0071FF25 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA1D25B9463A0071FF25 /* Coordinator.swift */; };
+		4FCBEA2225B990930071FF25 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA2125B990930071FF25 /* CellViewModel.swift */; };
+		4FCBEA2525B993F60071FF25 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBEA2425B993F60071FF25 /* ArticleCell.swift */; };
 		4FCDB8762585B0E5006F2B83 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */; };
 		4FCDB8BA2585F659006F2B83 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8B92585F659006F2B83 /* RepositoryViewController.swift */; };
 		4FCDB8BD2585F665006F2B83 /* RepositoryNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCDB8BC2585F665006F2B83 /* RepositoryNetworkModel.swift */; };
@@ -73,6 +75,8 @@
 		4FCBEA1325B943730071FF25 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		4FCBEA1A25B944FB0071FF25 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		4FCBEA1D25B9463A0071FF25 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4FCBEA2125B990930071FF25 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		4FCBEA2425B993F60071FF25 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		4FCDB8752585B0E5006F2B83 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
 		4FCDB8B92585F659006F2B83 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		4FCDB8BC2585F665006F2B83 /* RepositoryNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryNetworkModel.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				4FCBEA1325B943730071FF25 /* ArticleViewModel.swift */,
 				4FCBEA1A25B944FB0071FF25 /* ArticleViewController.swift */,
 				4FCBEA1D25B9463A0071FF25 /* Coordinator.swift */,
+				4FCBEA2125B990930071FF25 /* CellViewModel.swift */,
+				4FCBEA2425B993F60071FF25 /* ArticleCell.swift */,
 			);
 			path = NewsSearch;
 			sourceTree = "<group>";
@@ -343,12 +349,14 @@
 				4FA4B3C6258DD82900E5CBA4 /* DownloadImage.swift in Sources */,
 				4FCDB8BA2585F659006F2B83 /* RepositoryViewController.swift in Sources */,
 				4F8C3CD42584A706000E3A9D /* ViewController.swift in Sources */,
+				4FCBEA2525B993F60071FF25 /* ArticleCell.swift in Sources */,
 				4FA4B3B7258D9A4100E5CBA4 /* DataBinding.swift in Sources */,
 				4FA4B3C0258DC3BE00E5CBA4 /* TimerEvent.swift in Sources */,
 				4FCDB8C02585F66D006F2B83 /* Repository.swift in Sources */,
 				4FA4B3BD258DB36B00E5CBA4 /* MultipleStream.swift in Sources */,
 				4F8C3D0F2584B96B000E3A9D /* IssueEntity.swift in Sources */,
 				4FCBEA1B25B944FB0071FF25 /* ArticleViewController.swift in Sources */,
+				4FCBEA2225B990930071FF25 /* CellViewModel.swift in Sources */,
 				4FCDB8762585B0E5006F2B83 /* GithubEndpoint.swift in Sources */,
 				4FAAC83F258C8A220047D2A0 /* ThreadTransition.swift in Sources */,
 				4FAAC868258CAAF40047D2A0 /* StreamWithPublisher.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxRelay // articles를 subscribe하기 위해
 
 class ArticleViewController: UIViewController {
     
@@ -14,6 +15,23 @@ class ArticleViewController: UIViewController {
     let viewModel: ArticleViewModel
     
     let disposeBag = DisposeBag()
+
+    private let cellViewModel = BehaviorRelay<[CellViewModel]>(value: []) // 변화를 update
+    
+    var cellViewModelObserver : Observable<[CellViewModel]>{
+        return cellViewModel.asObservable() // cell이 변할 때마다 감지
+    }
+    
+    private lazy var collectionView: UICollectionView = {
+        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout())
+        
+        cv.delegate = self
+        cv.dataSource = self
+        
+        cv.backgroundColor = .systemBackground
+        
+        return cv
+    }()
     
     init(viewModel: ArticleViewModel) {
         self.viewModel = viewModel
@@ -28,21 +46,64 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-    
         fetchArticles()
+        subscribe()
     }
     
     func configureUI() {
         view.backgroundColor = .systemBackground
+        
+        self.title = self.viewModel.title
+        
+        collectionView.register(ArticleCell.self, forCellWithReuseIdentifier: "cell")
+        
+        view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
     }
     
     func fetchArticles() {
-        self.viewModel.fetchArticles() // Observable 형태의 article = event
-            .subscribe(onNext: { articles in // 구독 시작, 이벤트 방출
-                print(articles)
-            })
-            .disposed(by: disposeBag)
+        viewModel.fetchArticles().subscribe(onNext:{ cellViewModels in
+            self.cellViewModel.accept(cellViewModels)
+        })
+        .disposed(by: disposeBag)
+        
     }
     
+    func subscribe() {
+        self.cellViewModelObserver.subscribe(onNext: { articles in
+//            print(articles)
+            DispatchQueue.main.async {
+                self.collectionView.reloadData() // cell이 변할 때마다 CollectionView reload
+            }
+        })
+        .disposed(by: disposeBag)
+    }
 
+}
+
+extension ArticleViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.cellViewModel.value.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ArticleCell
+        
+        cell.imageView.image = nil // image 겹칠 수 있기때문에 nil로 초기화
+        let cellViewModel = self.cellViewModel.value[indexPath.row]
+        cell.viewModel.onNext(cellViewModel)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 120)
+    }
+    
 }
