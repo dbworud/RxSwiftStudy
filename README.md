@@ -1,7 +1,15 @@
 # RxSwift
 - Observable들의 Sequence를 이용하여 비동기적 처리 및 이벤트/데이터 스트림을 구현
 - 상태의 변화에 따른 대응, 이벤트들의 순서 구성, 코드 분리, 재사용성 향상
-
+```
+ Obsever는 Observable를 subscribe한다
+ 
+  observable.subscribe(onNext:{ element in
+    print(element)
+ })
+ 
+ Observers는 Observable이 방출하는 이벤트,아이템에 반응한다
+ ```
 
 ## Why Used? 
 기존의 closure를 사용하는 경우, 
@@ -28,6 +36,8 @@ RxSwift는 이것들을 간편하게 구현하기 위해 나온 라이브러리
 ## 1. Observables(= Observable sequence, Sequence)
 Rx코드 기반으로 T형태의 데이터를 전달할 수 있는 이벤트들을 비동기적으로 생성  
 Observer가 구독할 수 있게끔 이벤트를 생성(emit)하는 것   
+관찰가능한 상태를 유지하며 Event 전달 -> 해당 Event를 Observer에게 전달하고 Observer가 이에 대한 반응/처리(=subscribe)  
+
 생명주기
 1. next이벤트를 통해 값 방출
 2. 값이 온전히 방출되면 completed 이벤트 발생하고 종료
@@ -60,6 +70,33 @@ Observable에 값을 추가하고 Subscribe까지 하는 것
 - PublishSubject : subscribe() ~ .completed/.error 초기값X   ex. 친구의 선물 언박싱에 늦어서 지난 선물을 모름
 - BehaviorSubject : subscribe()직전 ~ .completed/.error 초기값O ex. 친구가 바로 직전에 뜯은 선물만 말해줌
 - ReplaySubject : 특정 크기만큼 일시적으로 캐시/버퍼 저장해서 최신 요소만 방출 ex. 친구가 직전에 뜯은 3개의 선물까지만 말해줌, 최근 검색어
+
+ 
+ **Subject vs Observable**  
+ 
+ <img width="396" alt="sub" src="https://user-images.githubusercontent.com/59492694/118579101-602f8000-b7c8-11eb-8403-bbf7de67e036.png">
+ 
+ (공) 둘 다 subscribe되어 Observer에게 이벤트 전달 가능
+ 
+ Observable 
+ - unicast방식(= 각각 subscribed된 observer가 observable에 대해 독립적인 실행을 가짐) 
+   ex. observer1: 54, observer2: 69 
+ - 단지 하나의 함수이므로 어떤 상태도 가지지지 않음  
+ - 모든 새로운 Observer에 관찰가능한 create 코드를 반복해서 실행  
+   즉, 각 Observer에 대해 실행되므로 HTTP 호출할 경우 각 Observer에 대해 호출 = 버그, 비효율  
+
+ When? 하나의 Observer에 대해 간단한 Observable이 필요할 때 
+ 
+ Subject = Observable + Observer  
+ - multicast 방식이라 여러 개의 observer를 subscribe 
+ - Observer 세부 정보를 저장하고 코드를 한 번만 실행, 모든 Observer에게 결과 제공  
+    ex. observer1: 92, observer2: 92  
+ 
+ When? 
+ 1. 자주 데이터를 저장하고 수정할 때  
+ 2. 여러 개의 Observer가 데이터를 관찰해야할 때  
+ 3. Observer와 Observable 사이의 proxy 역할 
+
 
 # RxCocoa
 RxSwift는 일반적인 Rx API이고, RxCocoa는 RxSwift의 동반 라이브러리로서 UIKit와 Cocoa프레임워크 기반의 개발을 지원하는 클래스를 보유하고 있음
