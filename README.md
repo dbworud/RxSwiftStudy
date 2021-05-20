@@ -12,6 +12,7 @@
  ```
 
 ## Why Used? 
+반응형 프로그래밍은 결국 사용자의 경험(UX)을 위해, UI가 freeze되지 않으면서 데이터를 다운로드 받는 등 부드럽고 즉각적인 반응을 보이도록  
 기존의 closure를 사용하는 경우, 
 1. 비동기적 프로그래밍을 위해 항상 closure로 전달할 경우 코드가 길고 복잡해짐, callback 지옥에 빠질 수 있음
 2. 쓰레드 관리가 복잡 DispathQueue.global.async(qos: .) { ... DispatchQueue.main.async { ... } }
@@ -28,12 +29,17 @@ RxSwift는 이것들을 간편하게 구현하기 위해 나온 라이브러리
 5. 에러 핸들링 쉬움
 6. MVVM이나 VIPER패턴에서 데이터 바인딩이 쉬움  
 
-//// 다른 비동기적 프로그래밍을 위한 라이브러리(ex. Bolts, Future, Promise)와의 차이점////   
+#### 다른 비동기적 프로그래밍을 위한 라이브러리(ex. Bolts, Future, Promise)와의 차이점   
 7. 여러 이벤트들의 발생순서나 이벤트를 받을지/안받을지 결정해줄 수 있는 **연산** 허용  
 8. 이벤트들에서 발생하는 데이터를 취합하고 변환시켜주는 연산 허용  
 
-
+ 
 ## 1. Observables(= Observable sequence, Sequence)
+데이터 스트림 자체  
+여러 스레드 간 전달될 수 있는 데이터를 감싼다(pack) 
+이 데이터 스트림은 주기적, 혹은 한 번만 데이터를 방출한다(emit) 
+특정 이벤트에 기반하여 데이터를 방출할 수 있도록 도와주는 연산자(operator)와 결합 
+observable = supplier = 데이터를 처리하고 다른 컴포넌트를 제공 
 Rx코드 기반으로 T형태의 데이터를 전달할 수 있는 이벤트들을 비동기적으로 생성  
 Observer가 구독할 수 있게끔 이벤트를 생성(emit)하는 것   
 관찰가능한 상태를 유지하며 Event 전달 -> 해당 Event를 Observer에게 전달하고 Observer가 이에 대한 반응/처리(=subscribe)  
@@ -49,11 +55,22 @@ Observable은 sequence의 정의일뿐, 구독(subscribe)되기 전에는 아무
 - Completable: **.completed**나 **.error**만 방출 + 값 방출X
 - May: **.success(value), .completed, .error + 값** 방출 
 
-## 2. Operators
+## 2. Observer
+Observable이 데이터 스트림이라면 Observer는 방출된 데이터 스트림을 소비(consume)   
+Observer는 Observable을 subscribe(on:) 메소드를 사용하여 Observable로부터 방출되는 데이터를 받음   
+Observable이 데이터를 방출할 때마다 등록된 모든 observer들이 onNext() 콜백에서 데이터를 받음   
+만약, 에러가 발생했다면 observers는 onError() 에서 에러를 받음   
+
+ 
+## 3. Operators
 ObservableType과 Observable클래스에서 복잡한 논리를 구현하기 위한 메소드
 ex. filter, map, ... , -> subscribe 때 비로소 구독하면서 값을 방출 
 
-## 3. Schedulers
+## 4. Schedulers
+Rx는 비동기 프로그래밍(async)를 위한 것이며 스레드 관리가 필요   
+Scheduler는 Observable과 Observer에게 어떤 스레드에서 실행되어야 하는지 말해주는 컴포넌트  
+observe(on:) - observer에게 어떤 스레드에서 실행되어야 할 지 알려줌   
+
 RxSwift에는 여러 스케줄러가 정의되어 있으며, 더 나은 performance를 위해 동일한 subscribe 작업 안에 다른 스케줄러에서 스케줄링이 가능
 - subscribe(on:)
   + 호출시점 상관없이 주로 Observable 객체가 만들어지는!! 작업이 실행되는 스레드 지정    "어느 스레드에서 Observable 만들거야?"
@@ -65,7 +82,7 @@ RxSwift에는 여러 스케줄러가 정의되어 있으며, 더 나은 performa
 
 ![image](https://user-images.githubusercontent.com/59492694/102000834-de29bf80-3d2e-11eb-9c39-427aa401629b.png)
 
-## 4. Subject = Observable이자 Observer
+## 5. Subject = Observable이자 Observer
 Observable에 값을 추가하고 Subscribe까지 하는 것
 - PublishSubject : subscribe() ~ .completed/.error 초기값X   ex. 친구의 선물 언박싱에 늦어서 지난 선물을 모름
 - BehaviorSubject : subscribe()직전 ~ .completed/.error 초기값O ex. 친구가 바로 직전에 뜯은 선물만 말해줌
