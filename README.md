@@ -55,6 +55,11 @@ Observable은 sequence의 정의일뿐, 구독(subscribe)되기 전에는 아무
 - Completable: **.completed**나 **.error**만 방출 + 값 방출X
 - May: **.success(value), .completed, .error + 값** 방출 
 
+☠️ Single 주의사항  
+Stream에서 Single을 사용했다면 Single로 시작해야 함. Observable로 시작해서 중간에 asSingle로 바꿔 Single을 엮는다면 문제  
+왜? Observable은 completed 이벤트를 발생시키는데, Single은 completed 이벤트 자체가 아닌 .success(next+completed) 이벤트를 발생시키기 때문에 completed 이벤트 발생 이전에 next 이벤트가 발생하지 않으면 에러를 일으키기 때문  
+가급적 지양하는 것이 좋음  
+
 ## 2. Observer
 Observable이 데이터 스트림이라면 Observer는 방출된 데이터 스트림을 소비(consume)   
 Observer는 Observable을 subscribe(on:) 메소드를 사용하여 Observable로부터 방출되는 데이터를 받음   
