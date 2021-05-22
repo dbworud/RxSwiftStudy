@@ -35,11 +35,11 @@ RxSwift는 이것들을 간편하게 구현하기 위해 나온 라이브러리
 
  
 ## 1. Observables(= Observable sequence, Sequence)
-데이터 스트림 자체  
-여러 스레드 간 전달될 수 있는 데이터를 감싼다(pack) 
-이 데이터 스트림은 주기적, 혹은 한 번만 데이터를 방출한다(emit) 
-특정 이벤트에 기반하여 데이터를 방출할 수 있도록 도와주는 연산자(operator)와 결합 
-observable = supplier = 데이터를 처리하고 다른 컴포넌트를 제공 
+데이터 스트림 자체   
+여러 스레드 간 전달될 수 있는 데이터를 감싼다(pack)   
+이 데이터 스트림은 주기적, 혹은 한 번만 데이터를 방출한다(emit)    
+특정 이벤트에 기반하여 데이터를 방출할 수 있도록 도와주는 연산자(operator)와 결합   
+observable = supplier = 데이터를 처리하고 다른 컴포넌트를 제공   
 Rx코드 기반으로 T형태의 데이터를 전달할 수 있는 이벤트들을 비동기적으로 생성  
 Observer가 구독할 수 있게끔 이벤트를 생성(emit)하는 것   
 관찰가능한 상태를 유지하며 Event 전달 -> 해당 Event를 Observer에게 전달하고 Observer가 이에 대한 반응/처리(=subscribe)  
@@ -59,6 +59,15 @@ Observable은 sequence의 정의일뿐, 구독(subscribe)되기 전에는 아무
 Stream에서 Single을 사용했다면 Single로 시작해야 함. Observable로 시작해서 중간에 asSingle로 바꿔 Single을 엮는다면 문제  
 왜? Observable은 completed 이벤트를 발생시키는데, Single은 completed 이벤트 자체가 아닌 .success(next+completed) 이벤트를 발생시키기 때문에 completed 이벤트 발생 이전에 next 이벤트가 발생하지 않으면 에러를 일으키기 때문  
 가급적 지양하는 것이 좋음  
+
+||  **HOT**  |  **COLD**  |
+|:----:|:-----:|:-------:|
+|이벤트 발생 시점|구독과 관계없이 이벤트 계속 생성 -> 리소스 사용 <br>동작 시점 조절 메소드|구독과 동시에 이벤트 발생 -> 그 이전에 리소스 소모X|
+|구독 시 처음부터 관찰|X|O|
+|observer - observable|하나의 observable 공유 가능|별도의 observable 인스턴스 가짐|
+|대표적 예|프로퍼티, 타이머, UIEvent|HTTP 요청 |
+ 
+
 
 ## 2. Observer
 Observable이 데이터 스트림이라면 Observer는 방출된 데이터 스트림을 소비(consume)   
@@ -95,30 +104,16 @@ Observable에 값을 추가하고 Subscribe까지 하는 것
 
  
  **Subject vs Observable**  
+ 둘 다 subscribe되어 Observer에게 이벤트 전달 가능
  
  <img width="396" alt="sub" src="https://user-images.githubusercontent.com/59492694/118579101-602f8000-b7c8-11eb-8403-bbf7de67e036.png">
  
- (공) 둘 다 subscribe되어 Observer에게 이벤트 전달 가능
- 
- Observable 
- - unicast방식(= 각각 subscribed된 observer가 observable에 대해 독립적인 실행을 가짐) 
-   ex. observer1: 54, observer2: 69 
- - 단지 하나의 함수이므로 어떤 상태도 가지지지 않음  
- - 모든 새로운 Observer에 관찰가능한 create 코드를 반복해서 실행  
-   즉, 각 Observer에 대해 실행되므로 HTTP 호출할 경우 각 Observer에 대해 호출 = 버그, 비효율  
-
- When? 하나의 Observer에 대해 간단한 Observable이 필요할 때 
- 
- Subject = Observable + Observer  
- - multicast 방식이라 여러 개의 observer를 subscribe 
- - Observer 세부 정보를 저장하고 코드를 한 번만 실행, 모든 Observer에게 결과 제공  
-    ex. observer1: 92, observer2: 92  
- 
- When? 
- 1. 자주 데이터를 저장하고 수정할 때  
- 2. 여러 개의 Observer가 데이터를 관찰해야할 때  
- 3. Observer와 Observable 사이의 proxy 역할 
-
+| |**Observable**|**Subject(= Observable + Observer)**|
+|:---:|:---:|:---:|
+|방식|unicast방식(= 각각 subscribed된 observer가 observable에 대해 독립적인 실행을 가짐) <br> ex. observer1: 54, observer2: 69 |multicast 방식이라 여러 개의 observer를 subscribe <br> ex. observer1: 54, observer2: 54 |
+|실행|모든 새로운 Observer에 관찰가능한 create 코드를 반복해서 실행 <br> 즉, 각 Observer에 대해 실행되므로 HTTP 호출할 경우 각 Observer에 대해 호출 = 버그, 비효율|Observer 세부 정보를 저장하고 코드를 한 번만 실행 <br> 모든 Observer에게 결과 제공|
+||단지 하나의 함수이므로 어떤 상태도 가지지지 않음||
+|When?|하나의 Observer에 대해 간단한 Observable이 필요할 때 |자주 데이터를 저장하고 수정할 때<br>여러 개의 Observer가 데이터를 관찰해야할 때<br>Observer와 Observable 사이의 proxy 역할 |
 
 # RxCocoa
 RxSwift는 일반적인 Rx API이고, RxCocoa는 RxSwift의 동반 라이브러리로서 UIKit와 Cocoa프레임워크 기반의 개발을 지원하는 클래스를 보유하고 있음
@@ -127,3 +122,17 @@ Relay는 RxCocoa4에서 구현된 클래스
 - BehaviorRelay: BehaviorSubject의 Wrapper, .value를 통해 현재값 가져올 수 있음 (~~Variable~~ -> BehaviorRelay)  
 ~ Subject는 .completed/.error 이벤트가 발생되어 subscribe 종료  
 ~ Relay는 .completed/.error 이벤트가 발생하지 않고 수동으로 dispose되기 전까지 계속 작동 -> UI Event에 적합
+
+
+ **Driver vs Relay**
+ 
+UI에 사용하기 위해 RxCocoa에 도입된 특수 Observable    
+절대 종료되지 않음. 무조건 Main Thread에서 동작(구독 또한)  
+
+ || **Driver**|**Relay**|
+ |:---:|:---:|:---:|
+ |구독 메소드|drive()|emit()|
+ |구독 시 가장 최근 이벤트|받음(replay O)|받지 않음(replayX)|
+ |자원공유|O|X|
+ |유사|BehaviorRelay|PublishRelay|
+ 
